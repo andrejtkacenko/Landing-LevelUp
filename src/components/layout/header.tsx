@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Gamepad2, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 
 const navItems = [
@@ -68,19 +68,20 @@ export function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <div className="p-4">
-                  <div className="flex items-center justify-between mb-8">
+                <SheetHeader className="p-4 flex-row items-center justify-between space-y-0 mb-4">
                      <Link href="/" className="flex items-center gap-2">
                         <Gamepad2 className="h-7 w-7 text-primary" />
                         <span className="text-2xl font-bold font-headline">LevelUp</span>
                     </Link>
+                    <SheetTitle className="sr-only">Menu</SheetTitle>
                     <SheetTrigger asChild>
                       <Button variant="ghost" size="icon">
                         <X className="h-6 w-6" />
                         <span className="sr-only">Close menu</span>
                       </Button>
                     </SheetTrigger>
-                  </div>
+                </SheetHeader>
+                <div className="p-4 pt-0">
                   <NavLinks className="flex-col items-start space-y-4 text-lg" />
                 </div>
               </SheetContent>
