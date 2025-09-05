@@ -29,7 +29,7 @@ const events = [
 ];
 
 export function EventCalendar() {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>();
 
   useEffect(() => {
     setSelectedDate(new Date());
