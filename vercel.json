@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/v1/flow/:flowId",
+      "destination": "/api/genkit/v1/flow/:flowId"
+    },
+    {
+      "source": "/api/v1/flow/:flowId/stream",
+      "destination": "/api/genkit/v1/flow/:flowId/stream"
+    }
+  ]
+}
