@@ -1,5 +1,7 @@
+
 "use client";
 
+import { useState, useEffect } from "react";
 import { Calendar as CalendarIcon, Swords, Handshake } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -27,6 +29,12 @@ const events = [
 ];
 
 export function EventCalendar() {
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
+
+  useEffect(() => {
+    setSelectedDate(new Date());
+  }, []);
+
   return (
     <section id="events" className="py-20 lg:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +51,8 @@ export function EventCalendar() {
               <CardContent className="p-2 sm:p-4">
                  <Calendar
                     mode="single"
-                    selected={new Date()}
+                    selected={selectedDate}
+                    onSelect={setSelectedDate}
                     className="rounded-md w-full"
                     />
               </CardContent>
