@@ -29,10 +29,11 @@ const events = [
 ];
 
 export function EventCalendar() {
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>();
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setSelectedDate(new Date());
+    setIsClient(true);
   }, []);
 
   return (
@@ -49,12 +50,12 @@ export function EventCalendar() {
           <div className="lg:col-span-2">
             <Card>
               <CardContent className="p-2 sm:p-4">
-                 <Calendar
+                 {isClient ? <Calendar
                     mode="single"
                     selected={selectedDate}
                     onSelect={setSelectedDate}
                     className="rounded-md w-full"
-                    />
+                    /> : <div className="rounded-md w-full aspect-[1.25/1] animate-pulse bg-muted" />}
               </CardContent>
             </Card>
           </div>
@@ -79,3 +80,4 @@ export function EventCalendar() {
     </section>
   );
 }
+
