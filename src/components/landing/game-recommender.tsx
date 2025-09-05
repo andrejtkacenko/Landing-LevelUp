@@ -61,13 +61,13 @@ export function GameRecommender() {
   }
 
   return (
-    <section id="ai-recommender" className="py-20 lg:py-32 bg-card">
+    <section id="recommender" className="py-20 lg:py-32 bg-card">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <Bot className="mx-auto h-12 w-12 text-primary mb-4" />
-          <h2 className="text-3xl lg:text-4xl font-bold font-headline">AI Game Recommender</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold font-headline">Game Recommender</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Not sure what to play? Let our AI guide you to your next adventure from our collection.
+            Not sure what to play? Let us guide you to your next adventure from our collection.
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
@@ -111,7 +111,7 @@ export function GameRecommender() {
             <Card className="min-h-full">
               <CardHeader>
                 <CardTitle>Our Suggestion</CardTitle>
-                <CardDescription>Here's what our AI thinks you'll enjoy.</CardDescription>
+                <CardDescription>Here's what we think you'll enjoy.</CardDescription>
               </CardHeader>
               <CardContent>
                 {isLoading ? (

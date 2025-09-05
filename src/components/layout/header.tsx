@@ -12,7 +12,7 @@ const navItems = [
   { href: '#community', label: 'Community' },
   { href: '#events', label: 'Events' },
   { href: '#membership', label: 'Membership' },
-  { href: '#ai-recommender', label: 'AI Recommender' },
+  { href: '#recommender', label: 'Recommender' },
   { href: '#faq', label: 'FAQ' },
 ];
 
